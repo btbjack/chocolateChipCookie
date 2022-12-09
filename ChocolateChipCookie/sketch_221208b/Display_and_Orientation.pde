@@ -4,7 +4,7 @@ void display(){
 //Output #2: Console confirms display orientation (landscape-square or portrait)
 //Output #3: console confirms dimension sizes (smaller and larger)
 //Output #4: if error with any of above, program will exit or be broken
-             Hint: "Bru, turn your phun."   
+//            Hint: "Bru, turn your phun."   
 }//End display
 //
 //End Display and Orientation subprogram

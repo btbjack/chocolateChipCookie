@@ -2,7 +2,7 @@
 int appWidth, appHeight, smallerDimension, largerDimension;
 //
 void setuo() {
-  size(600, 400);
+  size(2000000, 460);
   //fullScreen(); //displayWidth // displayHeight
   appWidth = width;
   appHeight = height;
@@ -13,3 +13,13 @@ void setuo() {
   
 }//End setup
 //
+void draw() {
+}//End draw
+//
+void keyPressed() {
+}//End keyPressed
+//
+void mousePressed() {
+}//End mousePressed
+//
+//End MAIN Program
