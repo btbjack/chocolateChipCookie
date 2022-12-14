@@ -1,4 +1,5 @@
-float backgroundX, backgroundY, backgroundWidth, backgroundHeight;
+int backgroundX, backgroundY, backgroundWidth, backgroundHeight;
+float quitX, quitY, quitWidth, quitHeight;
 int tintDayMode=255, tintDayModeOpacity=50;
 int tintRed=64, tintGreen=64, tintBlue=0, tintNightModeOpacity=85;
 //
@@ -21,14 +22,14 @@ void backgroundWhiteScreen() {
   noStroke();
   rect( backgroundX, backgroundY, backgroundWidth, backgroundHeight ); //white colour
   stroke(1); //Reset: 1 pixel
-  fill(20, 200, 35); //Reset: white
+  fill(200, 70, 50); //Reset: white
 }//End backgroundWhiteScreen
 //
 void backgroundImage() {
   backgroundWhiteScreen();
-  tint( tintDayMode, tintDayModeOpacity );
-  tint(tintRed, tintGreen, tintBlue, tintNightModeOpacity);
-  image( backgroundImage, backgroundX, backgroundY, backgroundWidth, backgroundHeight );
+ if ( nightMode==false ) tint( tintDayMode, tintDayModeOpacity ); //Day Mode, see ternary operator
+  if ( nightMode==true ) tint( tintRed, tintGreen, tintBlue, tintNightModeOpacity ); //Night Mode, see ternary operator
+  image( backGroundImage, backgroundX, backgroundY, backgroundWidth, backgroundHeight );
 }//End backgroundImage
-  //image with tint()
+//
 //End Home Screen Subprogram

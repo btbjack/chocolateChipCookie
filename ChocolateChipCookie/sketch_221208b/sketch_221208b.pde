@@ -1,18 +1,18 @@
 //Global Variables
 int appWidth, appHeight, smallerDimension, largerDimension;
 Boolean OS_on=false, splashScreenStart=false;
-color purple=#FF00FF, resetDefaultInk=#000000, white=#FFFFFF;
 /* Night Mode Comment
  Purple not for Night Mode, full BLUE
  resetDefaultInk is WHITE, not Night Mode Friendly, full BLUE
  */
-
+Boolean nightMode=false;
+color purple=#FF00FF, resetDefaultInk=#000000, white=#FFFFFF;
 //
 void setup() {
   size(600, 460);
   //fullScreen(); //displayWidth, displayHeight
-  appWidth = width * 1/9;
-  appHeight = height * 1/9;
+  appWidth = width * 3/9;
+  appHeight = height * 3/9;
   //Assignment: Display Algorithm from Hello World
   //display();
   //Display Algorithm will populate smaller and larger dimensions
@@ -35,6 +35,22 @@ void keyPressed() {
   splashScreenStart = true;
   backgroundWhiteScreen();
   backgroundImage();
+   }//End Splash Screen SPACE Bar
+  //
+  //Key Board Short Cuts
+  if ( key==CODED && keyCode==ESC ) exit();
+  if ( key=='Q' || key=='q' ) exit();
+  if ( key=='N' || key=='n' ) 
+  {
+    if ( nightMode==true ) { 
+      nightMode=false;
+      backgroundImage();
+    } else { 
+      nightMode=true;
+      backgroundImage();
+    }
+  }
+  //
 }//End keyPressed
 //
 void mousePressed() {
