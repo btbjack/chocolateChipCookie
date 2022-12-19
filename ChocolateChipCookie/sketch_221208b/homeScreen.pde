@@ -1,5 +1,6 @@
 int backgroundX, backgroundY, backgroundWidth, backgroundHeight;
 float quitX, quitY, quitWidth, quitHeight;
+float quitButtonImageRectX, quitButtonImageRectY, quitButtonImageRectWidth, quitButtonImageRectHeight;
 int tintDayMode=255, tintDayModeOpacity=50;
 int tintRed=64, tintGreen=64, tintBlue=0, tintNightModeOpacity=85;
 //
@@ -29,7 +30,7 @@ void backgroundImage() {
   backgroundWhiteScreen();
  if ( nightMode==false ) tint( tintDayMode, tintDayModeOpacity ); //Day Mode, see ternary operator
   if ( nightMode==true ) tint( tintRed, tintGreen, tintBlue, tintNightModeOpacity ); //Night Mode, see ternary operator
-  image( backGroundImage, backgroundX, backgroundY, backgroundWidth, backgroundHeight );
+  image( backgroundImage, backgroundX, backgroundY, backgroundWidth, backgroundHeight );
 }//End backgroundImage
 //
 //End Home Screen Subprogram
