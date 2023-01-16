@@ -1,7 +1,8 @@
-PImage backgroundImage, quitButtonImage;
+PImage backgroundImage, quitButtonImage, restart;
 //
 void imagePopulation() {//Image Population
-backgroundImage=loadImage("../../images/BAKERY-STYLE-CHOCOLATE-CHIP-COOKIES-9-637x637-1.jpg");
+backgroundImage=loadImage("../../images/soccer-lionel-messi-fc-barcelona-wallpaper-preview.jpg");
+restart = loadImage ("../../images/2161726.jpg");
 }//End imagePopulation
 //
 void quitButtonImage() {

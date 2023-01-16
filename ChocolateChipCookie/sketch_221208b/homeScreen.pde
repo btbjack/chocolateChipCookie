@@ -2,7 +2,7 @@ int backgroundX, backgroundY, backgroundWidth, backgroundHeight;
 float quitX, quitY, quitWidth, quitHeight;
 float quitButtonImageRectX, quitButtonImageRectY, quitButtonImageRectWidth, quitButtonImageRectHeight;
 int tintDayMode=255, tintDayModeOpacity=50;
-int tintRed=64, tintGreen=64, tintBlue=0, tintNightModeOpacity=85;
+int tintRed=80, tintGreen=70, tintBlue=100, tintNightModeOpacity=150;
 //
 void homeScreen() {
   println("Arrived at Home Screen"); //Testing for Splash Screen Start Button
@@ -19,7 +19,7 @@ void homeScreen() {
 }//End homeScreen
 //
 void backgroundWhiteScreen() {
-  fill(100, 90,15);
+  fill(30, 80, 200);
   noStroke();
   rect( backgroundX, backgroundY, backgroundWidth, backgroundHeight ); //white colour
   stroke(1); //Reset: 1 pixel
