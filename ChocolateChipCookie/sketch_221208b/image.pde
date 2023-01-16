@@ -1,12 +1,22 @@
-PImage backgroundImage, quitButtonImage, restart;
+PImage backGroundImage, quitButtonImage, restart;
 //
-void imagePopulation() {//Image Population
-backgroundImage=loadImage("../../images/soccer-lionel-messi-fc-barcelona-wallpaper-preview.jpg");
-restart = loadImage ("../../images/2161726.jpg");
+void imagePopulation() {
+  backGroundImage = loadImage ("../Images/soccer-lionel-messi-fc-barcelona-wallpaper-preview.jpg");
 }//End imagePopulation
 //
+void imageNightMode() {
+  //if ( nightMode==false ) tint( tintDayMode, tintDayModeOpacity ); //Day Mode, see ternary operator
+  //if ( nightMode==true ) tint( tintRed, tintGreen, tintBlue, tintNightModeOpacity ); //Night Mode, see ternary operator
+  //
+  if ( nightMode==true ) {
+    tint( tintRed, tintGreen, tintBlue, tintNightModeOpacity );
+  } else {
+    tint( tintDayMode, tintDayModeOpacity );
+  }
+}//End imageNightMode
+//
 void quitButtonImage() {
- quitButtonImage = backgroundImage;
+ quitButtonImage = backGroundImage;
   rect( quitButtonImageRectX, quitButtonImageRectY, quitButtonImageRectWidth, quitButtonImageRectHeight );
   //Aspect Ratio
   float quitButtonImageWidth=1707, quitButtonImageHeight=2506;
@@ -43,6 +53,40 @@ void quitButtonImage() {
     quitButtonImageRectX = centerX - quitButtonImageWidth_Calculated * 1/2;
   image( quitButtonImage, quitButtonImageRectX, quitButtonImageRectY, quitButtonImageRectWidth, quitButtonImageRectHeight);
   //
+  //
+  /*No Aspect Ratio
+   image( quitButtonImage, quitButtonImageRectX, quitButtonImageRectY, quitButtonImageRectWidth, quitButtonImageRectHeight);
+   */
+  //
 }//End quitButtonImage
+//
+void quitButtonHoverOver() {
+  if ( mouseX>=quitX && mouseX<=quitX+quitWidth && mouseY>=quitY && mouseY<=quitY+quitHeight ) { //QuitButton Hoverover
+    fill(white);
+    noStroke();
+    float centerX=appWidth*1/2;
+    float quitX_whiteScreen = centerX - appWidth * 1/15;
+    float quitWidth_whiteScreen = appWidth * 1/8;
+    rect( quitX_whiteScreen, quitY, quitWidth_whiteScreen, quitHeight );
+    strokeWeight(1); //Reset: 1 pixel
+    noFill();
+    quitButtonImage(); //Cookie, aspect ratio
+    /*
+    fill(white);
+     rect( quitX, quitY, quitWidth, quitHeight ); //testing only
+     noFill();
+     */
+  } else {
+    fill(white);
+    noStroke();
+    float centerX=appWidth*1/2;
+    float quitX_whiteScreen = centerX - appWidth * 1/15;
+    float quitWidth_whiteScreen = appWidth * 1/8;
+    rect( quitX_whiteScreen, quitY, quitWidth_whiteScreen, quitHeight );
+    strokeWeight(1); //Reset: 1 pixel
+    noFill();
+    quitButtonText();
+  }
+}//End quitButtonHoverOver
 //
 //End Image Subprogram
